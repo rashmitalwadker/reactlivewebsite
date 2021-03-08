@@ -1,4 +1,4 @@
-import web from "../src/images/4.jpg";
+import web from "../src/images/pic1.jpg";
 import spp from "../src/images/5.jpg";
 
 import digital from "../src/images/6.jpg";

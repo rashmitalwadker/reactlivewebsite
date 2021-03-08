@@ -1,5 +1,5 @@
 import React from "react";
-import digital from "../src/images/6.jpg";
+import digital from "../src/images/pic3.jpg";
 import {NavLink} from "react-router-dom";
 import Common from './Common';
 const Home = () => {

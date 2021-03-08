@@ -1,5 +1,5 @@
 import React from "react";
-import digital from "../src/images/6.jpg";
+import digital from "../src/images/pic4.jpg";
 import {NavLink} from "react-router-dom";
 
 const Common = (props) => {
@@ -21,7 +21,7 @@ return(
 </div>
 <div className ="col-lg-6 order-1 order-lg-2 header-img">
    <img src={digital}alt="animated"width=
-   "1000px"height="500px"margin-bottom="100px"index="-1"/>
+   "1000px"height="500px"margin-top="8rem"padding ="4rem"index="-1"/>
 </div>
 </div>
 </div>
