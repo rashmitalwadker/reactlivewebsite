@@ -3,11 +3,26 @@ import React ,{useState} from "react";
 
 
 const Contact = () => {
+  const[data,setData]=useState({
+fullname:'',
+email:'',
+phone:'',
+msg:''
+});
+const InputEvent=(event)=>{
+const{name,value} =event.target;
+setData((preVal) =>{
+  return {
+    ...preVal,
+    [name]:value,
+};
+});
+
+};
     
-  const formSubmit = () =>{
-    return(
-    <h1>the form is submmitted successfully</h1>
-    );
+  const formSubmit = (e) =>{
+   e.preventDefault();
+   alert(`${data.fullname},${data.email}my phone no.is${data.phone},${data.msg}`);
   };
   
   return(
@@ -18,33 +33,33 @@ const Contact = () => {
   <div className="container contact_div">
   <div className="row">
   <div className ="col-md-6 col-10 mx-auto">
-  <form>
+  <form onSubmit={formSubmit}>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-  <input type="name" class="form-control" id="exampleFormControlInput1"name="fullname"value=" name" 
+  <input type="name" class="form-control" id="exampleFormControlInput1"name="fullname"value={data.fullname} onChange={InputEvent} 
   placeholder="enter your name"/>
 </div>
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1"name="email"value="email"  
+  <input type="email" class="form-control" id="exampleFormControlInput1"name="email"value={data.email}onChange={InputEvent}  
   placeholder="enter your email"/>
 </div>
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Phone</label>
-  <input type="email" class="form-control" id="phone"name="phone"value="phone"  
+  <input type="email" class="form-control" id="phone"name="phone"value={data.phone}onChange={InputEvent}  
   placeholder="mobile number"/>
 </div>
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1"name="msg"value="message" rows="3"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea1"name="msg"value={data.msg}onChange={InputEvent} rows="3"></textarea>
 </div>
 <div class="col-12">
-    <button class="btn btn-outline-primary"type="submit"onSubmit={formSubmit}>Submit form</button>
+    <button class="btn btn-outline-primary"type="submit">Submit form</button>
   </div>
-
 </form>
+
 
 </div>
 
